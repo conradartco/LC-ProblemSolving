@@ -7,11 +7,34 @@
 # Output: [0,1]
 # Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
 
-class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
+
+# List = [2,7,11,15]
+# target = 9
+# class Solution(object):
+#     def twoSum(self, nums: List[int], target: int) -> List[int]:
+#         seen = {}
+#         for i, value in enumerate(nums):
+#             remaining = target - nums[i]
+
+#             if remaining in seen:
+#                 return [i, seen[remaining]]
+            
+#             seen[value] = i
+#         """
+#         :type nums: List[int]
+#         :type target: int
+#         :rtype: List[int]
+#         """
         
+nums = [2,7,11,15]
+target = 9
+class mySolution(object):
+    def sumTwo(self, nums, target):
+        seen = {}
+        for i, value in enumerate(nums):
+            remaining = target - nums[i]
+
+            if remaining in seen:
+                return [i, seen[remaining]]
+
+            seen[value] = i
