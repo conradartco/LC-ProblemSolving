@@ -2,15 +2,10 @@
 
 # A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., "ace" is a subsequence of "abcde" while "aec" is not).
 
-class Solution:
-    def isSubsequence(self, s: str, t: str) -> bool:
-        if len(s) > len(t):return False
-        if len(s) == 0:return True
-        subsequence=0
-        for i in range(0,len(t)):
-            if subsequence <= len(s) -1:
-                print(s[subsequence])
-                if s[subsequence]==t[i]:
-
-                    subsequence+=1
-        return  subsequence == len(s) 
+class Solution(object):
+    def isSubsequence(self, s, t):
+        remainder_of_t = iter(t)
+        for letter in s:
+            if letter not in remainder_of_t:
+                return False
+        return True
